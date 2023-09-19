@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper and Scissors game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;900&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <a href="winner.html"></a>
+</head>
+<body>
+    <!-- Main container body -->
+    <div class="container" id="disp">
+        <!-- Header tag containing title and scores -->
+        <div class="header">
+            <div class="title">
+                <p>ROCK</p>
+                <p>PAPER</p>
+                <p>SCISSORS</p>
+            </div>
+            <div class="scores">
+                <div class="com_score">
+                    <p style="font-size: 18px; font-weight: 800; color: rgb(95, 95, 95);">COMPUTER<br> &nbsp;&nbsp;&nbsp;&nbsp; SCORE</p>
+                    <h2 id="c_score" style="font-size: 70px; font-weight: 1100;">0</h2>
+                </div>
+                <div class="user_score">
+                    <p style="font-size: 18px; font-weight: 800; color: rgb(95, 95, 95);">&nbsp;YOUR<br>SCORE</p>
+                    <h2 id="u_score" style="font-size: 70px; font-weight: 900;">0</h2>
+                </div>
+            </div>
+        </div>
+        <!-- Options tag containing the Rock Paper Scissors options -->
+        <div class="options">
+            <div class="opt rock" onclick="Userpicked('rock')">
+                <img src="images/rock.png" alt="rock" class="src" style="height: 70px; width: 80px;">
+            </div>
+            <div class="opt scissors" onclick="Userpicked('scissors')">
+                <img src="images/scissor.png" alt="scissor" class="src" style="height: 70px; width: 60px;">
+            </div>
+            <div class="opt paper" onclick="Userpicked('paper')">
+                <img src="images/paper.png" alt="paper" class="src" style="height: 75px; width: 70px;">
+            </div>
+            <div class="triangle">
+                <img src="images/Line 1.png" style="width: 320px; height: 20px;">
+                <img src="images/Line 2.png" style="margin-left: 15px; width: 130px; height: 200px;">
+                <img src="images/Line 3.png" style="margin-left: 25px; height: 200px;">
+            </div>
+        </div>
+        <!-- Score area displaying the choices picked by both user and pc and determining the winner, loser or tie, as well as a play again button for replay-->
+        <div class="score-area">
+            <div class="user-choice">
+                <h1>USER PICKED</h1>
+                <div class="picked-choice">
+                    <div class="opt rock" id="choice-choice">
+                        <img src="images/rock.png" id="UserPick" alt="rock" class="src" style="height: 70px; width: 80px;">
+                    </div>
+                </div>
+            </div>
+            <div class="ref">
+                <div class="outcome">
+                    <h1 style="font-size: 35px;margin-top: 40px; margin-bottom: -2px; letter-spacing: 5px;">YOU WIN</h1>
+                    <h1 class="tie" style="font-size: 22px; letter-spacing: 2px;">AGAINST PC</h1>
+                    <div class="play-again" id="p-a" onclick="restart()">PLAY AGAIN</div>
+                </div>
+            </div>
+            <div class="pc-choice">
+                <h1>PC PICKED</h1>
+                <div class="picked-choice">
+                    <div class="opt rock" id="choice-choice-2">
+                        <img src="images/rock.png" id="OpntPick" alt="rock" class="src" style="height: 70px; width: 80px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Rule page for the pop up of rule option through a rule button -->
+        <div class="rule-page" style="width: 24vw; height: 56.4vh;">
+            <div class="close-btn" onClick="togglePage()">&times;</div>
+            <div class="rules">
+                <h1 style="font-size: 40px;">Game Rules</h1>
+                <ul class="rules-list" style="padding: px;">
+                    <li style="margin-top: 20px;">Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li style="margin-top: 20px;">Agree ahead of time whether you'll count off "rock, paper, scissors, shoot" or just "rock, paper, scissors."</li>
+                    <li style="margin-top: 20px;">Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                    <li style="margin-top: 20px;">If both players lay down the same hand, each player lays down another hand</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Rule button -->
+        <div class="rule-btn">
+            <button class="click-btn" onClick="togglePage()">RULES</button>
+        </div>
+        <!-- Next button to take the winner to the next page displaying the winner -->
+        <div class="next-btn">
+            <button id="nextClickBtn" class="next-click-btn" style="display: none;" onclick="toWinnerPage()">NEXT</button>
+        </div>
+    </div>    
+</body>
+</html>
